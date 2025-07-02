@@ -1,30 +1,47 @@
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren, useCallback, useState } from 'react';
 import { CalculatorContext } from './CalculatorContext';
 
 import { Operator, operators } from './constants';
-import { CalculatorState } from './types';
+import { CalculatorMode, CalculatorState } from './types';
 import { evaluateExpression } from '@/lib';
 
 export function CalculatorProvider(props: PropsWithChildren) {
-  const [expression, setExpression] = useState('');
-  const [result, setResult] = useState(0);
+  const [mode, setMode] = useState<CalculatorMode>('input');
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState(0);
+
+  const switchToInputMode = useCallback(() => {
+    if (mode == 'output') {
+      if (Number.isFinite(output) && !Number.isNaN(output)) {
+        setInput(String(output));
+      } else {
+        setInput('');
+      }
+      setMode('input');
+    }
+  }, [mode, output]);
 
   const value: CalculatorState = {
-    expression: expression,
-    result: result,
+    mode: mode,
+    input: input,
+    output: output,
     allClear() {
-      setExpression('');
-      setResult(0);
+      setMode('input');
+      setInput('');
+      setOutput(0);
     },
     backspace() {
-      setExpression((prev) => prev.substring(0, prev.length - 1));
+      switchToInputMode();
+      setInput((prev) => prev.substring(0, prev.length - 1));
     },
     appendOperator(operator) {
+      switchToInputMode();
+
       if (!operators.includes(operator)) {
         return;
       }
 
-      setExpression((prev) => {
+      setInput((prev) => {
         const inputLen = prev.length;
         const lastChar = prev[inputLen - 1];
 
@@ -44,17 +61,20 @@ export function CalculatorProvider(props: PropsWithChildren) {
       });
     },
     appendNumber(num) {
+      switchToInputMode();
+
       num = Math.trunc(num);
       if (!(0 <= num && num <= 9)) {
         return;
       }
 
-      setExpression((prev) => `${prev}${num}`);
+      setInput((prev) => `${prev}${num}`);
     },
     evaluate() {
-      const result = evaluateExpression(expression);
-      setResult(result ?? 0);
-      setExpression('');
+      setMode('output');
+      const result = evaluateExpression(input);
+      setOutput(result ?? 0);
+      setInput('');
       return 0;
     },
   };

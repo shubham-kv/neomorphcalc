@@ -1,8 +1,11 @@
 import { Operator } from "./constants";
 
+export type CalculatorMode = 'input' | 'output'
+
 export type CalculatorState = {
-  expression: string;
-  result: number | undefined;
+  mode: CalculatorMode
+  input: string;
+  output: number | undefined;
   allClear: () => void;
   backspace: () => void;
   appendOperator: (operator: Operator) => void;
