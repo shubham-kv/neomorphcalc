@@ -1,3 +1,10 @@
+# [1.0.0-dev.4](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2025-07-02)
+
+
+### Bug Fixes
+
+* **styles:** Rename app.module.scss to app.module.css ([d516f83](https://github.com/shubham-kv/neomorph-calc/commit/d516f83de549d69a0ab4e30e4fae051855f8d2d9))
+
 # [1.0.0-dev.3](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2025-07-02)
 
 
