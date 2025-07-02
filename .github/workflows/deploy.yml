@@ -59,6 +59,7 @@ jobs:
           elif [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
             echo "Deploying to Netlify dev preview"
             npx netlify deploy --dir=dist \
+              --alias="${GITHUB_REF_NAME}" \
               --site=$NETLIFY_SITE_ID \
               --auth=$NETLIFY_AUTH_TOKEN
           else
