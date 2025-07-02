@@ -1,3 +1,10 @@
+# [1.0.0-dev.3](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.2...v1.0.0-dev.3) (2025-07-02)
+
+
+### Features
+
+* **app:** Add app title on top of calculator UI ([007a3a4](https://github.com/shubham-kv/neomorph-calc/commit/007a3a44ae7589d180a570fb747a65c9cf39a354))
+
 # [1.0.0-dev.2](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2025-07-02)
 
 
