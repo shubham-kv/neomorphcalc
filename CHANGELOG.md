@@ -1,3 +1,10 @@
+# [1.0.0-dev.2](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.1...v1.0.0-dev.2) (2025-07-02)
+
+
+### Bug Fixes
+
+* small import-export refactor ([a05dc5e](https://github.com/shubham-kv/neomorph-calc/commit/a05dc5e11adda5e902ceb763dff273b68de2b035))
+
 # 1.0.0-dev.1 (2025-07-02)
 
 
