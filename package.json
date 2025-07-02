@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "author": "Shubham Vishwakarma",
+  "license": "MIT",
   "scripts": {
     "dev": "vite --host",
     "build": "tsc && vite build",
