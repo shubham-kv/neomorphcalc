@@ -13,26 +13,13 @@ permissions:
   contents: write
 
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install Dependencies
-        run: npm ci
-      - name: Run semantic release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release
+  get-next-version:
+    uses: semantic-release-action/next-release-version/.github/workflows/next-release-version.yml@v4
 
   deploy:
     needs:
-      - release
-    if: ${{ needs.release.outputs.new_release_published == 'true' }}
+      - get-next-version
+    if: needs.get-next-version.outputs.new-release-published == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -47,7 +34,7 @@ jobs:
         run: npm run build
       - name: Deploy to Netlify
         run: |
-          netlify deploy --prod \
+          npx netlify deploy --prod \
             --dir=dist \
             --auth=$NETLIFY_AUTH_TOKEN \
             --site=$NETLIFY_SITE_ID
