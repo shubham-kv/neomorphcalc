@@ -1,11 +1,10 @@
-import {Calculator} from './components'
+import { CalculatorUi } from '@/components';
+import styles from './app.module.scss';
 
-import styles from './app.module.scss'
-
-export default function App() {
-	return (
-		<div className={styles.app}>
-			<Calculator />
-		</div>
-	)
+export function App() {
+  return (
+    <div className={styles.app}>
+      <CalculatorUi />
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@import '@/styles/mixins';
 
 .wrapper {
 	border-radius: 1rem;
@@ -22,6 +22,7 @@
 	}
 
 	.text {
+		display: inline-block;
 		width: 100%;
 		max-width: 210px;
 		overflow-x: auto;

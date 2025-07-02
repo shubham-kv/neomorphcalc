@@ -1,7 +1,8 @@
-export type Operator = '+' | '-' | '*' | '/'
+import { Operator } from "./constants";
 
 export type CalculatorState = {
-  input: string;
+  expression: string;
+  result: number | undefined;
   allClear: () => void;
   backspace: () => void;
   appendOperator: (operator: Operator) => void;
