@@ -7,6 +7,7 @@ import {
 
 export * from './hooks';
 export * from './types';
+export * from './constants';
 
 export const Calculator = Object.freeze({
   Provider: CalculatorProvider,

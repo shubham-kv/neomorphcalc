@@ -1,7 +1,5 @@
-import { Calculator } from '@features/calculator';
-
+import { Calculator, Operator } from '@features/calculator';
 import styles from './calculator.module.scss';
-import { Operator } from '@/features/calculator/constants';
 
 export function CalculatorUi() {
   return (
@@ -41,20 +39,14 @@ export function CalculatorUi() {
           <Calculator.OperandCell operand={1} />
           <Calculator.OperandCell operand={2} />
           <Calculator.OperandCell operand={3} />
-          <Calculator.OperatorCell
-            operator={Operator.plus}
-            innerHtml='+'
-          />
+          <Calculator.OperatorCell operator={Operator.plus} innerHtml='+' />
 
           <Calculator.OperatorCell
             operator={Operator.dot}
             innerHtml='&#x2219;'
           />
           <Calculator.OperandCell operand={0} />
-          <Calculator.OperatorCell
-            operator={Operator.equal}
-            innerHtml='='
-          />
+          <Calculator.OperatorCell operator={Operator.equal} innerHtml='=' />
           <Calculator.OperatorCell
             operator={Operator.minus}
             innerHtml='&minus;'
