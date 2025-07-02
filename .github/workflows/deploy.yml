@@ -48,12 +48,22 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Deploy to Netlify
+
+      - name: Deploy to Netlify (prod or preview)
         run: |
-          npx netlify deploy --prod \
-            --dir=dist \
-            --auth=$NETLIFY_AUTH_TOKEN \
-            --site=$NETLIFY_SITE_ID
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            echo "Deploying to Netlify production"
+            npx netlify deploy --prod --dir=dist \
+              --site=$NETLIFY_SITE_ID \
+              --auth=$NETLIFY_AUTH_TOKEN
+          elif [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
+            echo "Deploying to Netlify dev preview"
+            npx netlify deploy --dir=dist \
+              --site=$NETLIFY_SITE_ID \
+              --auth=$NETLIFY_AUTH_TOKEN
+          else
+            echo "Not a deploy branch"
+          fi
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
