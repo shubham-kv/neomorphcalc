@@ -1,3 +1,10 @@
+# [1.0.0-dev.6](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.5...v1.0.0-dev.6) (2025-07-03)
+
+
+### Bug Fixes
+
+* **seo:** use VITE_APP_URL for meta.openGraph.url ([95feaa0](https://github.com/shubham-kv/neomorph-calc/commit/95feaa0547b885f0f089f71c9724f515ee3792df))
+
 # [1.0.0-dev.5](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2025-07-03)
 
 
