@@ -1,3 +1,10 @@
+# [1.0.0-dev.5](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.4...v1.0.0-dev.5) (2025-07-03)
+
+
+### Bug Fixes
+
+* **app:** Add some meta tags for SEO ([7e4df46](https://github.com/shubham-kv/neomorph-calc/commit/7e4df46a8b2d03bd7986a07f0ab3a2841c3198f7))
+
 # [1.0.0-dev.4](https://github.com/shubham-kv/neomorph-calc/compare/v1.0.0-dev.3...v1.0.0-dev.4) (2025-07-02)
 
 
