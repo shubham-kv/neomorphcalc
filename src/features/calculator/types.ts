@@ -10,5 +10,5 @@ export type CalculatorState = {
   backspace: () => void;
   appendOperator: (operator: Operator) => void;
   appendNumber: (num: number) => void;
-  evaluate: () => number;
+  evaluate: () => void;
 };

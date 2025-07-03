@@ -11,7 +11,7 @@ export function CalculatorProvider(props: PropsWithChildren) {
   const [output, setOutput] = useState(0);
 
   const switchToInputMode = useCallback(() => {
-    if (mode == 'output') {
+    if (mode === 'output') {
       if (Number.isFinite(output) && !Number.isNaN(output)) {
         setInput(String(output));
       } else {
@@ -75,7 +75,6 @@ export function CalculatorProvider(props: PropsWithChildren) {
       const result = evaluateExpression(input);
       setOutput(result ?? 0);
       setInput('');
-      return 0;
     },
   };
 
