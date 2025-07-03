@@ -1,5 +1,6 @@
 {
   "name": "neomorph-calc",
+  "description": "Calculator with soft UI",
   "version": "0.1.0",
   "type": "module",
   "author": "Shubham Vishwakarma",
@@ -12,7 +13,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.5"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
