@@ -14,7 +14,7 @@ export function generateMetadata({title}: {title: string}) {
       title: `${title} | ${applicationName}`,
       description,
       type: 'website',
-      url: import.meta.env.BASE_URL,
+      url: import.meta.env.VITE_APP_URL,
       siteName: applicationName,
     },
   };
