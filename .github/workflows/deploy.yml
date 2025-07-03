@@ -46,6 +46,16 @@ jobs:
           node-version: 20
       - name: Install Dependencies
         run: npm ci
+      - name: Generate .env
+        run: |
+          echo "VITE_APP_TITLE=${{ secrets.VITE_APP_TITLE }}" >> .env
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            echo "VITE_APP_URL=${{ secrets.VITE_APP_URL_PROD }}" >> .env
+          elif [[ "${GITHUB_REF_NAME}" == "dev" ]]; then
+            echo "VITE_APP_URL=${{ secrets.VITE_APP_URL_DEV }}" >> .env
+          else
+            echo "Aborting for non-deploy branch"
+          fi
       - name: Build
         run: npm run build
 
