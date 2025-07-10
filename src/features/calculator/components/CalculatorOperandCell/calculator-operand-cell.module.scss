@@ -1,4 +1,4 @@
-@import '../../styles/mixins';
+@import '@/styles/mixins';
 
 .cellWrapper {
 	.cell {
@@ -16,7 +16,6 @@
 
 		color: var(--primary-color);
 		background-color: var(--shade-intermediate);
-		transition: box-shadow 0.1s ease-out, outline 0.1s ease;
 
 		box-shadow:
 			calc(-1 * var(--cell-shadow-offset)) calc(-1 * var(--cell-shadow-offset)) var(--cell-shadow-spread) var(--shade-light),
