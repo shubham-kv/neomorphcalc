@@ -1,6 +1,6 @@
 {
-  "name": "neomorph-calc",
-  "description": "Calculator with soft UI",
+  "name": "neomorphcalc",
+  "description": "Calculator. Minimal. Modern. Soft on eyes.",
   "version": "0.1.0",
   "type": "module",
   "author": "Shubham Vishwakarma",
