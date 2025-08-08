@@ -1,3 +1,10 @@
+## [1.0.1-dev.1](https://github.com/shubham-kv/neomorphcalc/compare/v1.0.0...v1.0.1-dev.1) (2025-08-08)
+
+
+### Bug Fixes
+
+* **app:** remove app title on the top ([6ef0efd](https://github.com/shubham-kv/neomorphcalc/commit/6ef0efdee3bee55c0804a6e9374bf31fe8b9ac19))
+
 # 1.0.0 (2025-07-10)
 
 
