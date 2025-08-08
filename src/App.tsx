@@ -21,7 +21,6 @@ export function App() {
       </Helmet>
 
       <div className={styles.app}>
-        <h2 style={{ color: 'var(--primary-color)' }}>Neomorphcalc</h2>
         <CalculatorUi />
       </div>
     </>
